@@ -425,13 +425,13 @@ public class BluetoothPrintPlugin implements FlutterPlugin, ActivityAware, Metho
           assert deviceConnFactoryManager != null;
           PrinterCommand printerCommand = deviceConnFactoryManager.getCurrentPrinterCommand();
 
-          if (printerCommand == PrinterCommand.ESC) {
-            deviceConnFactoryManager.sendDataImmediately(PrintContent.mapToReceipt(config, list));
-          }else if (printerCommand == PrinterCommand.TSC) {
+//          if (printerCommand == PrinterCommand.ESC) {
+//            deviceConnFactoryManager.sendDataImmediately(PrintContent.mapToReceipt(config, list));
+//          }else if (printerCommand == PrinterCommand.TSC) {
             deviceConnFactoryManager.sendDataImmediately(PrintContent.mapToLabel(config, list));
-          }else if (printerCommand == PrinterCommand.CPCL) {
-            deviceConnFactoryManager.sendDataImmediately(PrintContent.mapToCPCL(config, list));
-          }
+//          }else if (printerCommand == PrinterCommand.CPCL) {
+//            deviceConnFactoryManager.sendDataImmediately(PrintContent.mapToCPCL(config, list));
+//          }
         }
       });
     }else{
